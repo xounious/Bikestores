@@ -1,0 +1,32 @@
+.navbar-brand {
+    font-weight: bold;
+}
+.dropdown-menu {
+    background-color: #f8f9fa; /* Couleur de fond du sous-menu */
+    z-index: 10;
+}
+#map {
+    height: 300px;
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+main {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+}
+#loginForm {
+    width: 50%;
+    margin: auto;
+    margin-top: 60px;
+}
+.dropdown-menu.selected {
+    display: block;
+    width: 560px;
+}
+.dropdown-menu a {
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+}

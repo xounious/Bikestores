@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draggable List</title>
+<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.css"></script><style>
+  /* CSS pour le style de la liste */
+  .draggable-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    width: 200px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+  .draggable-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: grab;
+  }
+  .draggable-list li:last-child {
+    border-bottom: none;
+  }
+</style>
+</head>
+<body>
+
+<ul id="sortable" class="draggable-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script><script>
+  // JavaScript pour rendre la liste draggable
+  const sortable = new Draggable.Sortable(document.getElementById('sortable'), {
+    draggable: 'li',
+  });
+</script>
+
+</body>
+</html>

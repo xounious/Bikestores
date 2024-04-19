@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="functions.js"></script>
+    <script>
+        // Appel à l'api pour les 4 onglets
+        document.addEventListener('DOMContentLoaded', function () {
+            afficheMenu();
+            fetchBrands();
+            fetchCategories();
+            applyFilters();
+        });
+    </script>
+</head>
+<body>
+    <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+        
+    </nav>
+    <main>
+        <button id="filterButton" onclick="toggleFilters()">Filters</button>
+        <div id="filtersContainer" style="display:none; padding: 20px;">
+            <div class="row filterRow">
+                <div class="col-sm-3">
+                    <div class="filter">
+                        <h3>Years</h3>
+                        <label><input type="checkbox" name="year" value="2016"> 2016</label><br>
+                        <label><input type="checkbox" name="year" value="2017"> 2017</label><br>
+                        <label><input type="checkbox" name="year" value="2018"> 2018</label><br>
+                        <label><input type="checkbox" name="year" value="2019"> 2019</label><br>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="filter" id="divFilterBrands">
+                        <h3>Brands</h3>
+                        <!-- Les options seront ajoutées dynamiquement par JavaScript -->
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="filter" id="divFilterCategories">
+                        <h3>Categories</h3>
+                        <!-- Les options seront ajoutées dynamiquement par JavaScript -->
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="filter">
+                        <h3>Price</h3>
+                        <label for="minPrice">Min:</label>
+                        <input type="number" id="minPrice" name="minPrice" min="100" value="100"><br>
+                        <label for="maxPrice">Max:</label>
+                        <input type="number" id="maxPrice" name="maxPrice" max="10000" value="10000"><br>
+                    </div>
+                </div>
+            </div>
+            <button id="applyFiltersButton" onclick="applyFilters()">Apply Filters</button>
+        </div>
+        <div id="containerProduits" class="container mt-5"></div>
+    </main>
+</body>
+</html>
